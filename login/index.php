@@ -15,11 +15,11 @@ include "../includes/header.php"; ?>
                 <button class="btn btn-info btn-block my-4" type="submit">Entrar</button>
                 <!-- Register -->
                 <p>
-                    <a href="registro.php">Registrarse</a>
+                    ¿Aún no tienes cuenta? <a href="registro.php">Registrarse</a>
                 </p>
             </form>
             <!-- Default form login -->
-
+            <p>RES:{{respuesta}}</p>
         </div>
     </div>
 </div>
