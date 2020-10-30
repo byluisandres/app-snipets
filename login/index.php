@@ -1,5 +1,11 @@
 <?php
-include "../includes/header.php"; ?>
+//session_start();
+include "../includes/header.php";
+//  if ($_SESSION['user']) {
+//    header("Location: ../principal");
+//  }
+
+?>
 <div class="container">
     <div class="row">
         <div class="col col-md-12 col-lg-12">
@@ -19,7 +25,6 @@ include "../includes/header.php"; ?>
                 </p>
             </form>
             <!-- Default form login -->
-            <p>RES:{{respuesta}}</p>
         </div>
     </div>
 </div>

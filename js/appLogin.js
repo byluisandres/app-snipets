@@ -6,6 +6,7 @@ const app = new Vue({
     passC: "",
     respuesta: "",
     correo: "",
+    menu: false,
   },
   methods: {
     registro() {
@@ -51,14 +52,11 @@ const app = new Vue({
           .then((respuesta) => {
             this.respuesta = respuesta.data;
             if (this.respuesta === "success") {
-              app.$refs.btnDisabled.disabled = false;
-              // app.$refs.btnDisabled.removeAttribute("disabled");
+              app.$refs.btnDisabled.removeAttribute("disabled");
               Swal.fire("¡Error!", "El correo electronico ya existe", "error");
             }
           });
-      } else {
-        Swal.fire("¡Error!", "Escribe el correo de forma correcta", "error");
-      }
+      } 
     },
     validEmail(email) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -71,10 +69,14 @@ const app = new Vue({
         .post("../api/loginRegistro/login.php", new FormData(form))
         .then((respuesta) => {
           this.respuesta = respuesta.data;
-          if(this.respuesta==="success"){
-            location.href=".././principal/";
-          }else{
-            Swal.fire("¡Error!", "Es usuario y/o contraseña son incorrectos", "error");
+          if (this.respuesta === "success") {
+            location.href = ".././principal/";
+          } else {
+            Swal.fire(
+              "¡Error!",
+              "Es usuario y/o contraseña son incorrectos",
+              "error"
+            );
           }
         });
     },

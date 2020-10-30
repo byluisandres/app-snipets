@@ -15,6 +15,8 @@ if ($f = $select->fetch_assoc()) {
 $passEncriptada = password_verify($pass, $password);
 
 if ($email == $correo && $passEncriptada = true) {
+    $_SESSION['user']=$user;
+    $_SESSION['foto']=$foto;
     echo "success";
 } else {
     echo "fail";

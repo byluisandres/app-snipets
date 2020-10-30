@@ -9,7 +9,7 @@
                 <input type="text" name="usuario" id="usuario" v-model="usuario" class="form-control mb-4" placeholder="Nombre de usuario">
                 <!-- Email -->
                 <input type="email" id="email" v-model="correo" name="email" class="form-control mb-4" @blur="validarCorreo" placeholder="E-mail">
-
+                <span v-text="textEmail"></span>
                 <!-- Password -->
                 <input type="password" id="pass" v-model="pass" name="pass" class="form-control mb-4" placeholder="Contraseña" pattern="[A-Za-z0-9]{8,15}">
                 <!-- repit Password -->
@@ -21,10 +21,10 @@
                 </div>
 
                 <!-- Sign in button -->
-                <button class="btn-block btn btn-info my-4" disabled="true" ref="btnDisabled" type="submit">Registrarse</button>
+                <button class="btn-block btn btn-info my-4"  type="submit">Registrarse</button>
                 <!-- Register -->
                 <p>
-                    Ir al <a href="index.php" class="stretched-link">Log in</a>
+                    Ir al <a href="index.php" class="">Log in</a>
                 </p>
             </form>
             <!-- Default form login -->
